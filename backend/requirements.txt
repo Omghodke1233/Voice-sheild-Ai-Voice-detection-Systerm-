@@ -1,0 +1,26 @@
+# --- Web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+websockets==14.1
+python-multipart==0.0.20
+
+# --- Config & validation ---
+pydantic==2.10.4
+pydantic-settings==2.7.1
+python-dotenv==1.0.1
+
+# --- Database ---
+SQLAlchemy==2.0.36
+# PostgreSQL driver (used in Docker/production; SQLite needs no driver).
+psycopg[binary]==3.2.3
+
+# --- Audio (Phase 2) ---
+numpy==2.2.1
+
+# --- Testing ---
+pytest==8.3.4
+httpx==0.28.1
+
+# NOTE: AI/ML dependencies (torch, transformers, faster-whisper, librosa,
+# numpy, scikit-learn) are intentionally NOT listed yet. They arrive in
+# Phase 3. See README "Python version note" before installing them.

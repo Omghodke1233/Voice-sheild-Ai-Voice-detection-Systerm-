@@ -1,0 +1,44 @@
+# --- Secrets / env ---
+.env
+*.env
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+*.db
+*.sqlite3
+
+# --- Node / frontend ---
+node_modules/
+dist/
+.vite/
+*.local
+
+# --- Models & data (large / sensitive; do not commit) ---
+models/**/*.bin
+models/**/*.pt
+models/**/*.pth
+models/**/*.onnx
+data/samples/*
+data/test/*
+!data/**/.gitkeep
+
+# --- Audio (never commit raw voice) ---
+*.wav
+*.mp3
+*.flac
+*.webm
+*.ogg
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

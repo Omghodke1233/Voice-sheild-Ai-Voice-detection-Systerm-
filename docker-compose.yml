@@ -1,0 +1,22 @@
+# Docker Compose for VoiceShield.
+#
+# NOTE: Docker is optional for local development — the backend runs directly
+# with uvicorn and SQLite (see README). This file documents the production
+# topology and provides a one-command PostgreSQL for those who have Docker.
+#
+# For local dev: docker compose up (uses SQLite in backend, no db service needed)
+
+services:
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: sqlite:///./voiceshield.db
+      LOG_LEVEL: INFO
+      CORS_ORIGINS: http://localhost:8080,http://127.0.0.1:8080,http://localhost:5173
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
